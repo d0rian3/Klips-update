@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../public/Group 7.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles/index.min.css">
+    <title>Tasks</title>
+  </head>
+  <body>
+    <nav>
+      <article class="navArticle">
+        <section class="navIcon">
+          <a href="../index.html">
+            <span class="dash">Dash</span>
+            <span>Board</span>
+          </a>
+        </section>
+        <section class="searchTask">
+          <input type="text" placeholder="Search your task here..." />
+          <img src="../public/svg/Search.svg" alt="" />
+        </section>
+        <section class="otherFunctions">
+          <img src="../public/svg/Vector (2).svg" alt="" />
+          <img src="../public/svg/Vector (3).svg" alt="" />
+        </section>
+        <section class="dateTracker">
+          <span id="day"></span>
+          <span id="dateSpan"></span>
+        </section>
+        <div class="menuToggle">
+          <div class="fixator">
+            <label class="burger" for="burger">
+              <input type="checkbox" id="burger" />
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+
+            <ul class="droppedList">
+              <li>
+                <span>Vital Task</span>
+              </li>
+              <li>
+                <a href="./taskPage/index.html">My Tasks</a>
+              </li>
+
+              <li>
+                <span>Settings</span>
+              </li>
+              <li>
+                <span>Help</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </nav>
+    <main>
+      <aside>
+        <article>
+          <section class="sideUserInfo">
+            <img src="../public/svg/Ellipse 1.svg" alt="" />
+            <span>amanuel</span>
+            <span>amanuel@gmail.com</span>
+          </section>
+          <section class="sideUserAbilities">
+            <div>
+              <img
+                src="../public/svg/Vector (4).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Vital Task</span>
+            </div>
+            <div>
+              <img src="../public/svg/my task.svg" alt="" class="userAbilSvgIcons" />
+              <a href="../taskPage/index.html">My Tasks</a>
+            </div>
+            <div>
+              <img
+                src="../public/svg/Vector (5).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Task Categories</span>
+            </div>
+            <div>
+              <img
+                src="../public/svg/Vector (6).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Settings</span>
+            </div>
+            <div>
+              <img
+                src="../public/svg/Vector (7).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Help</span>
+            </div>
+            <div class="logOut">
+              <img
+                src="../public/svg/Vector (8).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Logout</span>
+            </div>
+          </section>
+        </article>
+      </aside>
+
+      <article class="MyTaskShortArticle">
+        <section class="shortTaskList">
+          <p class="shortHeaderListTask">My Tasks</p>
+        </section>
+        <section class="TaskFullInfo"></section>
+      </article>
+    </main>
+    <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/dataTracker.js"></script>
+
+    <script type="module" src="../src/pageTasks.js"></script>
+  </body>
+</html>

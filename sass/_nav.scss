@@ -1,0 +1,247 @@
+nav {
+  background-color: var(--bg2);
+  box-shadow: var(--bs);
+  margin-bottom: 50px;
+  position: relative;
+}
+.navArticle {
+  display: flex;
+  padding: 30px 50px;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    background-color: var(--bg1);
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+.navIcon {
+  cursor: pointer;
+  a {
+    display: flex;
+    font-size: 27px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+  }
+}
+.dash {
+  color: var(--bg1);
+}
+.searchTask {
+  display: flex;
+  align-items: center;
+  position: relative;
+  input {
+    width: 700px;
+    padding: 10px 15px;
+    border-radius: 8px 0px 0px 8px;
+    border: none;
+  }
+  img {
+    position: absolute;
+    right: 0;
+  }
+}
+.otherFunctions {
+  display: flex;
+  gap: 10px;
+}
+.dateTracker {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  span:last-child {
+    color: var(--c2);
+  }
+}
+.menuToggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.menuToggle div {
+  position: relative;
+}
+
+.droppedList {
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 88px);
+  background: #1a1a1a;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  gap: 20px;
+
+  li {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  li span,
+  a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  }
+
+  li span:hover,
+  a:hover {
+    transition: all 0.5s;
+    transform: translate(0, -0.6em);
+    box-shadow: 0 0 0 0 #fff;
+  }
+
+  li span:not(hover),
+  a:not(hover) {
+    transition: all 1s;
+  }
+}
+
+.burger {
+  scale: 0.7;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+  align-self: flex-end;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+.burger input:checked ~ .droppedList {
+  transform: translateX(0);
+}
+@media (max-width: 1100px) {
+  .searchTask {
+    input {
+      max-width: 500px !important;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .searchTask {
+    input {
+      max-width: 300px !important;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .burger {
+    display: block;
+  }
+  .otherFunctions {
+    display: none;
+  }
+  .dateTracker {
+    display: none;
+  }
+}
+@media (max-width: 510px) {
+  .navIcon {
+    a {
+      font-size: 20px;
+    }
+  }
+  .searchTask {
+    input {
+      max-width: 200px !important;
+    }
+  }
+}
+@media (max-width: 410px) {
+  .navArticle {
+    flex-direction: column;
+  }
+  .droppedList {
+    top: 150px;
+    height: calc(100vh - 150px);
+  }
+  .navIcon {
+    a {
+      font-size: 25px;
+    }
+  }
+  .searchTask {
+    input {
+      max-width: 300px;
+    }
+  }
+}

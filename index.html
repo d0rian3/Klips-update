@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/Group 7.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alata&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alata&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.min.css" />
+    <title>Klips: Task Manager</title>
+  </head>
+  <body>
+    <nav>
+      <article class="navArticle">
+        <section class="navIcon">
+          <a href="./index.html">
+            <span class="dash">Dash</span>
+            <span>Board</span>
+          </a>
+        </section>
+        <section class="searchTask">
+          <input type="text" placeholder="Search your task here..." />
+          <img src="./public/svg/Search.svg" alt="" />
+        </section>
+        <section class="otherFunctions">
+          <img src="./public/svg/Vector (2).svg" alt="" />
+          <img src="./public/svg/Vector (3).svg" alt="" />
+        </section>
+        <section class="dateTracker">
+          <span id="day"></span>
+          <span id="dateSpan"></span>
+        </section>
+        <div class="menuToggle">
+          <div class="fixator">
+            <label class="burger" for="burger">
+              <input type="checkbox" id="burger" />
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+
+            <ul class="droppedList">
+              <li>
+                <span>Vital Task</span>
+              </li>
+              <li>
+                <a href="./taskPage/index.html">My Tasks</a>
+              </li>
+
+              <li>
+                <span>Settings</span>
+              </li>
+              <li>
+                <span>Help</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </nav>
+
+    <!-- ! -->
+    <main>
+      <aside>
+        <article>
+          <section class="sideUserInfo">
+            <img src="./public/svg/Ellipse 1.svg" alt="" />
+            <span>amanuel</span>
+            <span>amanuel@gmail.com</span>
+          </section>
+          <section class="sideUserAbilities">
+            <div>
+              <img
+                src="./public/svg/Vector (4).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Vital Task</span>
+            </div>
+            <div>
+              <img
+                src="./public/svg/my task.svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <a href="./taskPage/index.html">My Tasks</a>
+            </div>
+            <div>
+              <img
+                src="./public/svg/Vector (5).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Task Categories</span>
+            </div>
+            <div>
+              <img
+                src="./public/svg/Vector (6).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Settings</span>
+            </div>
+            <div>
+              <img
+                src="./public/svg/Vector (7).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Help</span>
+            </div>
+            <div class="logOut">
+              <img
+                src="./public/svg/Vector (8).svg"
+                alt=""
+                class="userAbilSvgIcons"
+              />
+              <span>Logout</span>
+            </div>
+          </section>
+        </article>
+      </aside>
+
+      <div class="fixator">
+        <h1>Welcome back,</h1>
+
+        <!-- * -->
+        <article class="mainArticleOfAllTasks">
+          <section class="sectionToDo">
+            <div class="toDoHeader">
+              <div class="toDoIcon">
+                <img src="./public/svg/Pending.svg" alt="" />
+                <span>To-Do</span>
+              </div>
+              <div class="toDoAddTask">
+                <img src="./public/svg/Vector (9).svg" alt="" />
+                <span>Add task</span>
+              </div>
+            </div>
+            <!-- ! -->
+            <div id="popUp" class="popUp">
+              <div class="popUpContainer">
+                <div class="popUpBody">
+                  <div class="headerPopUp">
+                    <h3>Add New Task</h3>
+                    <button id="goBackButton">Go Back</button>
+                  </div>
+                  <form>
+                    <div class="titleDiv">
+                      <label>Title</label>
+                      <input type="text" id="titleInput" />
+                    </div>
+                    <div class="descDiv">
+                      <label>Task Description</label>
+                      <textarea
+                        name=""
+                        id="descriptionArea"
+                        placeholder="Start writing here....."
+                      ></textarea>
+                    </div>
+                  </form>
+                  <button class="doneButton" id="doneButton">Done</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="verticalTasks">
+            <!-- ! STATUS COMPLETES -->
+            <section class="taskStatusSection">
+              <div class="statusIcon">
+                <img src="./public/svg/Task Complete.svg" alt="" />
+                <span>Task Status</span>
+              </div>
+              <div class="exampleCharts"></div>
+            </section>
+            <!-- ! FINISHED TASKS -->
+            <section class="finishedTasks">
+              <div class="finishedIcon">
+                <img src="./public/svg/Task Complete.svg" alt="" />
+                <span>Completed Task</span>
+              </div>
+              <div class="shortFinishedTask" id="shortFinishedTask"></div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- ! -->
+    <script type="module" src="./src/dataTracker.js"></script>
+    <script type="module" src="./src/tasks.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
