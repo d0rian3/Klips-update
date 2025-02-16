@@ -950,6 +950,7 @@ main .popUpBody .doneButton {
   padding: 25px;
   gap: 20px;
   border-radius: 20px;
+  overflow: hidden;
 }
 .MyTaskShortArticle .shortTaskList .exampleTask,
 .MyTaskShortArticle .TaskFullInfo .exampleTask {
