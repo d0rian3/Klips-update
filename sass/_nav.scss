@@ -46,6 +46,13 @@ nav {
 .otherFunctions {
   display: flex;
   gap: 10px;
+  img {
+    cursor: pointer;
+    transition: 200ms;
+    &:hover {
+      background-color: #e64040;
+    }
+  }
 }
 .dateTracker {
   display: flex;

@@ -54,10 +54,9 @@ function createCompletedTaskElement(task) {
       </div>
   `;
 
-  variable.finishedTasks.insertAdjacentHTML("afterbegin", taskComponent);
-
-  const deleteDoneTask = document.getElementById("deleteDoneTask");
-  deleteDoneTask.addEventListener("click", deleteDoneTask);
+  variable.finishedTasks.insertAdjacentHTML("beforeend", taskComponent);
+  const buttonDeleteDoneTask = document.getElementById("deleteDoneTask");
+  buttonDeleteDoneTask.addEventListener("click", deleteDoneTask);
 }
 
 function saveTasks() {

@@ -78,7 +78,7 @@ main {
     padding: 26px;
     gap: 25px;
     overflow-y: auto;
-    max-height: 550px;
+    // max-height: 550px;
     .sectionToDo {
       display: flex;
       flex-direction: column;
@@ -159,12 +159,118 @@ main {
         padding: 23px;
         gap: 10px;
         border-radius: 8px;
+        min-height: 200px;
         .statusIcon {
           display: flex;
           align-items: center;
           gap: 5px;
           span {
             color: var(--bg1);
+          }
+        }
+        .exampleCharts {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 10px;
+          .loader {
+            width: 64px;
+            height: 64px;
+            position: relative;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+          }
+
+          .loader:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            transform: rotate(45deg) translate(30%, 40%);
+            background: #ff9371;
+            box-shadow: 32px -34px 0 5px #ff3d00;
+            animation: slide 2s infinite ease-in-out alternate;
+          }
+
+          .loader:after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ff3d00;
+            transform: rotate(0deg);
+            transform-origin: 35px 145px;
+            animation: rotate 2s infinite ease-in-out;
+          }
+
+          @keyframes slide {
+            0%,
+            100% {
+              bottom: -35px;
+            }
+
+            25%,
+            75% {
+              bottom: -2px;
+            }
+
+            20%,
+            80% {
+              bottom: 2px;
+            }
+          }
+
+          @keyframes rotate {
+            0% {
+              transform: rotate(-15deg);
+            }
+
+            25%,
+            75% {
+              transform: rotate(0deg);
+            }
+
+            100% {
+              transform: rotate(25deg);
+            }
+          }
+          // ! ---->
+
+          @keyframes blinkCursor {
+            50% {
+              border-right-color: transparent;
+            }
+          }
+
+          @keyframes typeAndDelete {
+            0%,
+            10% {
+              width: 0;
+            }
+            45%,
+            55% {
+              width: 6.2em;
+            }
+            90%,
+            100% {
+              width: 0;
+            }
+          }
+          .text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.2em solid var(--c3);
+            color: var(--c3);
+            animation: typeAndDelete 4s steps(11) infinite,
+              blinkCursor 0.5s step-end infinite alternate;
           }
         }
       }
@@ -175,7 +281,7 @@ main {
         padding: 23px;
         gap: 10px;
         border-radius: 8px;
-
+        min-height: 200px;
         align-items: center;
         .finishedIcon {
           display: flex;
@@ -213,6 +319,8 @@ main {
               color: var(--c3);
               font-size: 14px;
               font-weight: 300;
+              word-break: break-word;
+              overflow-wrap: break-word;
             }
           }
           .verticalPart {
@@ -481,6 +589,13 @@ main {
 @media (max-width: 410px) {
   .fixator {
     width: 300px;
+  }
+  .sectionToDo {
+    .exampleTask {
+      img {
+        display: none;
+      }
+    }
   }
   .mainArticleOfAllTasks {
     .verticalTasks {

@@ -101,6 +101,14 @@ nav {
   display: flex;
   gap: 10px;
 }
+.otherFunctions img {
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+.otherFunctions img:hover {
+  background-color: #e64040;
+}
 
 .dateTracker {
   display: -webkit-box;
@@ -441,7 +449,6 @@ main .mainArticleOfAllTasks {
   padding: 26px;
   gap: 25px;
   overflow-y: auto;
-  max-height: 550px;
 }
 main .mainArticleOfAllTasks .sectionToDo {
   display: -webkit-box;
@@ -565,6 +572,7 @@ main .mainArticleOfAllTasks .verticalTasks .taskStatusSection {
   padding: 23px;
   gap: 10px;
   border-radius: 8px;
+  min-height: 200px;
 }
 main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .statusIcon {
   display: -webkit-box;
@@ -577,6 +585,152 @@ main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .statusIcon {
 }
 main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .statusIcon span {
   color: var(--bg1);
+}
+main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .exampleCharts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .exampleCharts .loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .exampleCharts .loader:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(45deg) translate(30%, 40%);
+          transform: rotate(45deg) translate(30%, 40%);
+  background: #ff9371;
+  -webkit-box-shadow: 32px -34px 0 5px #ff3d00;
+          box-shadow: 32px -34px 0 5px #ff3d00;
+  -webkit-animation: slide 2s infinite ease-in-out alternate;
+          animation: slide 2s infinite ease-in-out alternate;
+}
+main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .exampleCharts .loader:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3d00;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: 35px 145px;
+          transform-origin: 35px 145px;
+  -webkit-animation: rotate 2s infinite ease-in-out;
+          animation: rotate 2s infinite ease-in-out;
+}
+@-webkit-keyframes slide {
+  0%, 100% {
+    bottom: -35px;
+  }
+  25%, 75% {
+    bottom: -2px;
+  }
+  20%, 80% {
+    bottom: 2px;
+  }
+}
+@keyframes slide {
+  0%, 100% {
+    bottom: -35px;
+  }
+  25%, 75% {
+    bottom: -2px;
+  }
+  20%, 80% {
+    bottom: 2px;
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  25%, 75% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  25%, 75% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+}
+@-webkit-keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+@-webkit-keyframes typeAndDelete {
+  0%, 10% {
+    width: 0;
+  }
+  45%, 55% {
+    width: 6.2em;
+  }
+  90%, 100% {
+    width: 0;
+  }
+}
+@keyframes typeAndDelete {
+  0%, 10% {
+    width: 0;
+  }
+  45%, 55% {
+    width: 6.2em;
+  }
+  90%, 100% {
+    width: 0;
+  }
+}
+main .mainArticleOfAllTasks .verticalTasks .taskStatusSection .exampleCharts .text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.2em solid var(--c3);
+  color: var(--c3);
+  -webkit-animation: typeAndDelete 4s steps(11) infinite, blinkCursor 0.5s step-end infinite alternate;
+          animation: typeAndDelete 4s steps(11) infinite, blinkCursor 0.5s step-end infinite alternate;
 }
 main .mainArticleOfAllTasks .verticalTasks .finishedTasks {
   display: -webkit-box;
@@ -591,6 +745,7 @@ main .mainArticleOfAllTasks .verticalTasks .finishedTasks {
   padding: 23px;
   gap: 10px;
   border-radius: 8px;
+  min-height: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -646,6 +801,8 @@ main .mainArticleOfAllTasks .verticalTasks .finishedTasks .exampleTask .taskShor
   color: var(--c3);
   font-size: 14px;
   font-weight: 300;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 main .mainArticleOfAllTasks .verticalTasks .finishedTasks .exampleTask .verticalPart {
   display: -webkit-box;
@@ -965,6 +1122,9 @@ main .popUpBody .doneButton {
 @media (max-width: 410px) {
   .fixator {
     width: 300px;
+  }
+  .sectionToDo .exampleTask img {
+    display: none;
   }
   .mainArticleOfAllTasks .verticalTasks .finishedTasks .exampleTask {
     width: 230px;
